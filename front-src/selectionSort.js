@@ -4,8 +4,7 @@ const { PerformanceObserver, performance } = require("perf_hooks");
 
 const selectionSort = (array) => {
   let tmpSmallest,
-    orderOfTmpSmallest,
-    sortedOrder = [];
+    orderOfTmpSmallest;
   for (let i = 0; i < array.length - 1; i++) {
     tmpSmallest = array[i];
     orderOfTmpSmallest = i;
@@ -15,7 +14,6 @@ const selectionSort = (array) => {
         orderOfTmpSmallest = j;
       }
     }
-    sortedOrder.push(orderOfTmpSmallest);
     array[orderOfTmpSmallest] = array[i];
     array[i] = tmpSmallest;
   }

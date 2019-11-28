@@ -1,11 +1,23 @@
 mod fetch_json;
 mod selection_sort;
+use std::time::Instant;
 
 fn main() {
+    let start = Instant::now();
     let json_array = fetch_json::create();
     match json_array {
-        Ok(v) => println!("{:?}", selection_sort::sort(v)),
-        Err(e) => println!("{:?}", e),
+        Ok(v) => {
+            let mut val = v;
+            let ref_val = &mut val;
+            selection_sort::sort(ref_val);
+            println!("{:?}", val);
+        }
+        Err(e) => panic!("{}", e),
     }
-    println!("Hello, world!");
+    let end = start.elapsed();
+    println!(
+        "processing time {}.{:03}",
+        end.as_secs(),
+        end.subsec_nanos() / 1_000_000
+    )
 }

@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const MIN = 0, MAX =Math.pow(2, 10) - 1;
+const MIN = 0, MAX =Math.pow(2, 15) - 1;
 const FILENAME = "randoms.json";
 
 const createMaxIntArray = () => {

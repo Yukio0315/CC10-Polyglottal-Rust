@@ -1,6 +1,5 @@
 use rustc_serialize::json;
 use std::fs;
-use std::vec::Vec;
 const PATH: &str = "randoms.json";
 
 pub fn create() -> Result<(Vec<i32>), Box<dyn std::error::Error>> {
