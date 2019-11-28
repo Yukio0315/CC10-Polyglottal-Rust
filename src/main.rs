@@ -8,9 +8,9 @@ fn main() {
     match json_array {
         Ok(v) => {
             let mut val = v;
-            let ref_val = &mut val;
+            let ref_val: &mut [i32] = &mut val;
             selection_sort::sort(ref_val);
-            println!("{:?}", val);
+            println!("{:?}", ref_val);
         }
         Err(e) => panic!("{}", e),
     }

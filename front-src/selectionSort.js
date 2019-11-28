@@ -25,7 +25,7 @@ const readArray = () => {
   return JSON.parse(fs.readFileSync(FILENAME, 'utf8'));
 }
 
-const startTime = performance.now()
+const startTime = performance.now();
 selectionSort(readArray());
-const endTime = performance.now()
+const endTime = performance.now();
 console.log(endTime - startTime);
